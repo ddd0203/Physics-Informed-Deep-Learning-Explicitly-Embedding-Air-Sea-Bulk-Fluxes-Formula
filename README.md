@@ -16,9 +16,9 @@ At present, we have uploaded the preliminary version of our partial code (e.g., 
 To ensure code clarity and usability for the community, **the complete codebase — including the full data-processing pipelines, model training/testing scripts, and visualization programs — is currently being thoroughly cleaned and organized. The full source code will be made entirely public upon the formal acceptance of our paper.** 
 
 ## 🌟 Highlights
-- **Physics-Informed Architecture:** We embed the COARE bulk flux algorithm to dynamically convert atmospheric sequences into explicit physical drivers (momentum, heat, and freshwater fluxes).
-- **Over-Smoothing Restraint:** By injecting deterministic physics into a data-driven ViT, our framework effectively limits kinetic energy dissipation and anomaly loss during 10-day integrations.
-- **Superior Performance:** The model comprehensively outperforms state-of-the-art AI baselines (e.g., XiHe) and effectively restrains phase-error divergence compared to operational numerical models (e.g., GLO12v4).
+- ViT model embeds COARE formula for explicit air-sea flux parameterization.
+- Tendency forecasting mitigates over-smoothing and preserves kinetic energy.
+- Framework outperforms XiHe and GLO12v4 over a 10-day global ocean forecast.
 
 ## 📁 Repository Structure (Upcoming)
 Once finalized, this repository will contain:
