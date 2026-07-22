@@ -27,3 +27,41 @@ for reproducing the high-resolution training and inference workflows.
 ├── train_module.py
 ├── trainer.py
 └── vit_new.py
+
+The recommended entry point is:
+
+OM_revision_highres.ipynb
+
+This notebook contains examples for:
+training and validating the model;
+loading a pretrained checkpoint;
+running the inference workflow.
+
+The notebook is designed to run in Google Colab.
+
+Data and model weights
+Pretrained model checkpoints
+
+The pretrained model checkpoints are available at:
+
+https://drive.google.com/drive/folders/18ION0rGY8yrRyQRoGll2uW10qW11Qv0B?usp=sharing
+
+Download the required checkpoint and update the checkpoint path in
+OM_revision_highres.ipynb.
+
+Training and validation data
+
+The example training data, validation data, and normalization statistics are
+available at:
+
+https://drive.google.com/drive/folders/1b76UsJbITAejPVgZvs4z3cF5Hq6-nZvG?usp=drive_link
+
+This folder contains:
+
+training data;
+validation data;
+mean values calculated from the training dataset;
+standard-deviation values calculated from the training dataset.
+
+The same mean and standard-deviation files must be used during training and
+inference.
