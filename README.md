@@ -1,31 +1,57 @@
-# Physics-Informed-Deep-Learning-Explicitly-Embedding-Air-Sea-Bulk-Fluxes-Formula
-Official repository for the physics-informed Vision Transformer (ViT) framework for global upper-ocean forecasting.
+# Physics-Informed Vision Transformer for Global Upper-Ocean Forecasting
 
-# Physics-Informed ViT for Global Upper-Ocean Forecasting
+Official implementation of the physics-informed Vision Transformer developed
+for global upper-ocean forecasting.
 
-[![Status](https://img.shields.io/badge/Status-Under_Review-blue.svg)]()
-[![Code](https://img.shields.io/badge/Code-Work_in_Progress-orange.svg)]()
+The framework explicitly incorporates air–sea bulk fluxes calculated using the
+COARE formulation and predicts the evolution of upper-ocean temperature,
+salinity, and horizontal currents.
 
-This is the official code repository for our submitted manuscript on global upper-ocean forecasting (temperature, salinity, and surface currents) using a **Physics-Informed Vision Transformer (ViT)**.
+This repository provides the model implementation, COARE-based flux
+calculation, data-loading utilities, training modules, inference scripts, and a
+Jupyter/Google Colab notebook demonstrating the high-resolution training and
+inference workflows described in the manuscript.
 
-## ⚠️ Repository Status (Work in Progress)
-**Please note: The manuscript associated with this repository is currently under review.** 
+## Repository status
 
-At present, we have uploaded the preliminary version of our partial code (e.g., the core model architecture and the integration of the COARE bulk flux algorithm). 
+The code required to run the released high-resolution training and inference
+examples is publicly available.
 
-To ensure code clarity and usability for the community, **the complete codebase — including the full data-processing pipelines, model training/testing scripts, and visualization programs — is currently being thoroughly cleaned and organized. The full source code will be made entirely public upon the formal acceptance of our paper.** 
+Large model checkpoints and example datasets are distributed separately
+through Google Drive because they are too large to be stored directly in this
+GitHub repository.
 
-## 🌟 Highlights
-- ViT model embeds COARE formula for explicit air-sea flux parameterization.
-- Tendency forecasting mitigates over-smoothing and preserves kinetic energy.
-- Framework outperforms XiHe and GLO12v4 over a 10-day global ocean forecast.
+The complete original reanalysis, operational forecast, and observational
+datasets used in the manuscript are not redistributed. These datasets should
+be obtained from their original data providers according to the data
+availability information given in the manuscript.
 
-## 📁 Repository Structure (Upcoming)
-Once finalized, this repository will contain:
-- `model/`: The core physics-informed ViT framework.
-- `physics/`: Scripts for the COARE bulk formulae calculations.
-- `train/` & `evaluate/`: Complete training pipelines and evaluation scripts.
-- `visualization/`: Plotting scripts for metrics and spatial maps (e.g., capturing the cold wake of Typhoon Lekima).
+## Main features
 
-## ✉️ Contact
-If you have any questions regarding the partial code or the upcoming release, please feel free to open an issue or contact the corresponding author.
+- Physics-informed Vision Transformer for upper-ocean forecasting.
+- Explicit embedding of the COARE 3.5 air–sea bulk flux formulation.
+- Prediction of temperature, salinity, and horizontal-current tendencies.
+- Training and validation workflow for the high-resolution experiment.
+- Autoregressive inference initialized from GLO12v4 forecast fields.
+- Atmospheric forcing based on ERA5 variables.
+- Pretrained model checkpoints for reproducing the released inference example.
+- Training-set mean and standard-deviation files for normalization and
+  denormalization.
+
+## Repository structure
+
+```text
+.
+├── OM_revision_highres.ipynb
+├── architectures.py
+├── coare35vn.py
+├── flux_util.py
+├── forecast_real_from_GLO12v4_ERA5_nc.py
+├── loader.py
+├── loss_functions.py
+├── meteo.py
+├── model.py
+├── test.py
+├── train_module.py
+├── trainer.py
+└── vit_new.py
